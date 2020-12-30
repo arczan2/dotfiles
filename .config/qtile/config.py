@@ -6,7 +6,7 @@ from libqtile.config import Key, Screen, Group
 mod = "mod4"
 
 keys = [
-    # Swich windows (VIM <3)
+    # Switch windows (VIM <3)
     Key([mod], 'h', lazy.layout.left()),
     Key([mod], 'j', lazy.layout.down()),
     Key([mod], 'k', lazy.layout.up()),
@@ -17,6 +17,12 @@ keys = [
     Key([mod, 'shift'], 'j', lazy.layout.grow_down()),
     Key([mod, 'shift'], 'k', lazy.layout.grow_up()),
     Key([mod, 'shift'], 'l', lazy.layout.grow_right()),
+
+    # Shuffle windows (VIM <3)
+    Key([mod, 'control'], 'j', lazy.layout.shuffle_down()),
+    Key([mod, 'control'], 'k', lazy.layout.shuffle_up()),
+    Key([mod, 'control'], 'h', lazy.layout.shuffle_left()),
+    Key([mod, 'control'], 'l', lazy.layout.shuffle_right()),
 
     # Spawn rofi
     Key([mod], 'e', lazy.spawn('rofi -show run')),
@@ -36,6 +42,8 @@ keys = [
 
 layouts = [
     layout.Columns(margin=8, border_focus='#777777'),
+    layout.Max(),
+    layout.MonadWide(margin=8, border_focus='#777777'),
 ]
 
 widgets = [
