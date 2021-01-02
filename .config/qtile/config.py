@@ -27,7 +27,7 @@ keys = [
     # Spawn rofi
     Key([mod], 'e', lazy.spawn('rofi -show run')),
 
-    # Switch layout (You can choose Columns, Columns and Columns :))
+    # Switch layout
     Key([mod], 'Tab', lazy.next_layout()),
 
     # Kill window
@@ -58,17 +58,17 @@ widgets = [
     # Right side
     widget.Systray(),
     widget.Clock(format='%H:%M %d-%m-%Y', foreground='f1c40f'),
-    widget.Battery(format='{char} {percent:2.0%}'),
     widget.Volume(),
+    widget.Battery(format='{char} {percent:2.0%}'),
 ]
 
 screens = [Screen(top=bar.Bar(widgets, 30, background='#1d1d1d'))]
 
 # Dict of pairs name : key
 group_keys = {
-    'CODE': 'a',
+    'TERMINAL': 'a',
     'WEB': 's',
-    'TERMINAL': 'd',
+    'CODE': 'd',
     '???': 'f',
 }
 
